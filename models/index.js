@@ -1,4 +1,5 @@
 import { Sequelize } from'sequelize'
+import coursesModel from './courses.model.js'
 import 'dotenv/config'
 
 const DB_URL = process.env.DB_URL
@@ -18,5 +19,7 @@ const db = {}
 
 db.Sequelize = Sequelize
 db.sequelize = sequelize
+
+db.course = coursesModel(sequelize, Sequelize)
 
 export default db
